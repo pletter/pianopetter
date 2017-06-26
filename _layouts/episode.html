@@ -1,0 +1,20 @@
+---
+layout: kepskast
+---
+
+<article class="episode">
+    <h1>
+        <a href="{{ page.url }}" rel="bookmark" title="Permanent Link to {{ page.title }}">
+            {{ page.title }}
+        </a>
+    </h1>
+    <div class="shownotes">
+        {{ content }}
+    </div>
+    <p class="meta">
+        <time datetime="{{ page.date | date: "%Y-%m-%d" }}">
+            {{ page.date | date: "%Y-%m-%d" }}
+        </time>
+        •
+    </p>
+</article>

@@ -1,0 +1,43 @@
+---
+layout: none
+author: "Karl Jonsson, Pontus Granström, Petter Rylén"
+keywords: "keps,music,humor,philosophy,politics,science,parenting,culture,human rights,humour,comedy"
+---
+
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd">
+    <channel>
+        <title>Kepskast</title>
+        <link>{{ site.url }}/kepskast</link>
+        <language>en</language>
+        <copyright>&#xA9; 2014 Keps</copyright>
+        <itunes:subtitle>Enlightenment in audio form.</itunes:subtitle>
+        <itunes:summary>Keps is a band gone podcasters. They talk about everything from important stuff like politics to important stuff like snot.</itunes:summary>
+        <description>Enlightenment in audio form.</description>
+        <itunes:author>{{ page.author }}</itunes:author>
+        <itunes:owner>
+            <itunes:name>Pontus Granström</itunes:name>
+            <itunes:email>pontus@keps.cool</itunes:email>
+        </itunes:owner>
+        <itunes:image href="http://kepskast.s3.amazonaws.com/kepskast-square.png" />
+        <itunes:category text="Comedy" />
+        <itunes:keywords>{{ page.keywords }}</itunes:keywords>
+        <itunes:explicit>yes</itunes:explicit>
+        
+        {% for post in site.categories.kepskast %}
+        <item>
+            <title>{{ post.title }}</title>
+            <itunes:summary>{{ post.summary | xml_escape }}</itunes:summary>
+            <description><![CDATA[{{ post.content }}]]></description>
+            <itunes:author>{{ page.author }}</itunes:author>
+            <itunes:image href="http://kepskast.s3.amazonaws.com/kepskast-square.png" />
+            <enclosure url="{{ post.mp3 }}" length="{{ post.bytes }}" type="audio/mpeg" />
+            <guid isPermaLink="false">{{ post.guid }}</guid>
+            <pubDate>{{ post.date | date: "%a, %d %b %Y %H:%M:%S" }} GMT</pubDate>
+            <itunes:duration>{{ post.duration }}</itunes:duration>
+            <itunes:keywords>{{ page.keywords }}</itunes:keywords>
+            <itunes:explicit>yes</itunes:explicit>
+        </item>
+        {% endfor %}
+    </channel>
+</rss>

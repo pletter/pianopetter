@@ -1,0 +1,117 @@
+---
+---
+
+body {
+    font-family: "Helvetica Neue", Helvetica, Futura, sans-serif;
+    font-size: 17px;
+    line-height: 1.5em;
+    margin: 0 auto;
+    width: 500px;
+
+    -webkit-font-smoothing: antialiased;
+    -moz-font-smoothing: antialiased;
+    -o-font-smoothing: antialiased;
+}
+
+header h1 {
+    display: none;
+}
+
+h1 {
+    font-family: Futura, sans-serif;
+    font-size: 30px;
+    font-weight: normal;
+    text-align: center;
+    line-height: 2em;
+}
+
+h2 {
+    font-family: Futura, sans-serif;
+    font-size: 22px;
+    font-weight: normal;
+}
+
+h3 {
+    font-family: Futura, sans-serif;
+    font-size: 17px;
+    font-weight: normal;
+}
+
+h1 a {
+    text-decoration: none;
+}
+
+a {
+    color: black;
+}
+
+a:visited {
+    color: black;
+}
+
+ul {
+    padding-left: 20px;
+}
+
+
+nav {
+    margin: 20px 0;
+    background-color: black;
+    ul {
+        padding: 0;
+        text-align: center;
+    }
+    li {
+        font-family: Futura, sans-serif;
+        font-size: 25px;
+        display: inline-block;
+        list-style-type: none;
+        padding: 40px 20px;
+    }
+    li span {
+        position: relative;
+    }
+    a {
+        text-decoration: none;
+        color: white;
+        &:visited {
+            color: white;
+        }
+    }
+}
+.no-touch nav li {
+    &:hover span {
+        top: -3px;
+    }
+    &:active span {
+        top: 3px;
+    }
+} 
+
+#content {
+    padding: 0 20px;
+}
+
+article {
+    margin-bottom: 100px;
+    
+    .meta {
+        text-align: center;
+    }
+    
+    audio {
+        width: 100%;
+    }
+}
+
+footer {
+    img {
+        margin-left: -100px;
+    }
+}
+
+@media (max-width: 500px) {
+    header, footer, #content {
+        overflow: hidden;
+    }
+}
